@@ -42,7 +42,7 @@ function SideNav() {
     },[path])
   return (
     <div className='h-screen p-5 border shadow-sm'>
-        <Image src={'./logo.svg'}
+        <Image src={'/logo.svg'}
         alt='logo'
         width={160}
         height={100}/>
