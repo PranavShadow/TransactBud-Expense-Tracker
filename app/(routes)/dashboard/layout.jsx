@@ -18,6 +18,8 @@ function DashBoardLayout({children}) {
   useEffect(() => {
     user&&checkUserBudgets();
   },[user])
+
+
   const checkUserBudgets = async()=>{
     const result = await db.select()
     .from(Budgets)
@@ -28,7 +30,6 @@ function DashBoardLayout({children}) {
     if(result?.length==0){
       router.replace('/dashboard/budgets') 
     }
-
   }
   return (
     <div>
