@@ -20,7 +20,7 @@ import { Budgets } from '@/utils/schema'
 import { useUser } from '@clerk/nextjs'
 import { toast } from 'sonner'
 
-function CreateBudget() {
+function CreateBudget({refreshData}) {
     
     const [emojiIcon, setEmojiIcon] = useState('🦜');
     const [openEmojiPicker, setOpenEmojiPicker] = useState(false);
@@ -42,6 +42,7 @@ function CreateBudget() {
         }).returning({insertedId:Budgets.id})
 
         if(result){
+          refreshData()
             toast("Budget has been created", { position: "bottom-right" })
         }
         }
@@ -68,7 +69,7 @@ function CreateBudget() {
                   >
                     {emojiIcon}
                 </Button>
-                <div className='absolute'>
+                <div className='absolute z-10'>
                     <EmojiPicker 
                     open={openEmojiPicker}
                     onEmojiClick={(e) => {
