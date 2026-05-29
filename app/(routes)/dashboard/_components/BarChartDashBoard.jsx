@@ -1,13 +1,12 @@
 import React from 'react'
-import { Bar, BarChart, Legend, Tooltip, XAxis, YAxis } from 'recharts'
+import { Bar, BarChart, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 
 function BarChartDashBoard({budgetList}) {
   return (
     <div className='border rounded-lg p-5'>
         <h2 className='font-bold text-lg mb-3'>Activity</h2>
+        <ResponsiveContainer width={'80%'} height={300}>
         <BarChart
-        width={500}
-        height={300}
         data={budgetList}
         margin={{
             top:7,
@@ -21,6 +20,7 @@ function BarChartDashBoard({budgetList}) {
 
 
         </BarChart>
+        </ResponsiveContainer>
     </div>
   )
 }

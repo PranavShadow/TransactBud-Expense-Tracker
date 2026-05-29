@@ -7,8 +7,8 @@ import { useUser } from '@clerk/nextjs'
 function Hero() {
   const {user, isSignedIn} = useUser();
   return (
-    <section className="bg-gray-50 flex items-center flex-col">
-  <div className="mx-auto w-screen max-w-7xl px-4 py-16 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32">
+    <section className="bg-gray-50 flex items-center flex-col min-h-screen overflow-hidden">
+  <div className="mx-auto w-screen max-w-7xl px-4 py-32 sm:px-6 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8">
     
     <div className="max-w-prose text-left">
       <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
@@ -34,9 +34,9 @@ function Hero() {
 
         <a
           className="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900"
-          href="#"
+          href="/dashboard"
         >
-          Learn More
+          Go to DashBoard
         </a>
       </div>
     </div>
@@ -60,11 +60,11 @@ function Hero() {
     </svg>
     
   </div>
-  <Image src={'/dashboard.png'} 
+  {/* <Image src={'/dashboard.png'} 
   alt='dashboard' 
   width={1000} 
   height={700}
-  className='mt-5 rounded-xl border-2'/>
+  className='mt-5 rounded-xl border-2'/> */}
 </section>
   )
 }
