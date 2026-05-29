@@ -22,7 +22,7 @@ function BudgetItem({budget}) {
                 </div>
             </div>
             <h2 className='font-bold text-primary text-lg'>
-                ${budget.amount}
+                Rs.{budget.amount}
             </h2>
         </div>
 
